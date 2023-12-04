@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <mat-card class="example-card " >
+                <mat-card-header class="header">
+                    
+                    <img mat-card-image src="assets/{{element.image}}" matTooltip="Hola" alt="">
+                    
+
+                  
+                </mat-card-header>
+            </mat-card>
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <mat-card class="example-card " >
+                <mat-card-title>{{element.title}}</mat-card-title>
+                <mat-divider></mat-divider>
+                <div class="video">
+                    <youtube-player 
+                        videoId="{{videoId}}" 
+                        suggestedQuality="highres"
+                        [height]="250" 
+                        [width]="450" 
+                        [startSeconds]="4"
+                        [endSeconds]="8">
+                    </youtube-player>                    
+                </div>
+
+                <mat-card-content>
+                    <p>
+                      {{element.description}}
+                    </p>
+                    <div class="row">
+                        <p class="col-md-4">
+                            {{element.releaseDate| date:'longDate'}}
+                        </p>
+                        <p class="col-md-4">
+                            <mat-icon matBadge="{{element.rating}}">star</mat-icon>
+                        </p>
+                        <p class="col-md-4">
+                            {{element.genre}}
+                        </p>
+                    </div>
+
+                  </mat-card-content>
+            </mat-card>
+        </div>    
+    </div>
+</div>

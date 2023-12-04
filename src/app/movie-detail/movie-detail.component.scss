@@ -1,0 +1,23 @@
+.container{
+    width: 90%;
+    margin: 0 5%;
+    mat-card{
+        mat-card-header{
+            img{
+                width: 100%;
+            }
+        }
+    } 
+    mat-card-title{
+        text-align: center;
+    }
+    .video{
+        margin: auto;
+    }
+}
+
+@media(min-width: 768px){
+    .container{
+        max-width: 90%;
+    }
+}

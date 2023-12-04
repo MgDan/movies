@@ -1,0 +1,36 @@
+<div class="container">
+    <button mat-raised-button color="accent" (click)="sorting('date')">
+        <mat-icon>date_range</mat-icon>
+        <span>sort by Release Date</span>
+    </button>
+    <button mat-raised-button color="accent" (click)="sorting('tittle')">
+        <mat-icon>sort_by_alpha</mat-icon>
+        <span>sort by Tittle</span> 
+    </button>
+    <div class="row p-3">
+        <div class="col-lg-3 col-md-6 p-1" *ngFor="let it of movies | sort:sortby">
+            <mat-card class="example-card " >
+                <mat-card-header class="header">
+                    <a href="" (click)="$event.preventDefault(); navigate( it)">
+                        <img mat-card-image src="/assets/{{it.image}}" [matTooltip]="info(it)" alt="{{it.image}}">
+                    </a>
+                 <!-- <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{it.title}}</mat-card-title>
+                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+                  
+                </mat-card-header>
+                <mat-card-title>{{it.title}}</mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                  <p>
+                    {{it.description}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button (click)="addToWatch(it)">Add to Watch</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
